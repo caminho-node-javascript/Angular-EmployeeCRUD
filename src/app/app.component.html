@@ -33,7 +33,8 @@
       <div class="row mt-4" *ngFor="let employee of employeesToDisplay; let ei = index;">
         <div class="col">
           <app-employee [employee]="employee" (onRemoveEmployee)="removeEmployee($event)"
-            (onEditEmployee)="editEmployee($event)"></app-employee>
+            (onEditEmployee)="editEmployee($event)">
+          </app-employee>
         </div>
       </div>
 

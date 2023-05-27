@@ -70,7 +70,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       salary: this.Salary.value,
       profile: this.fileInput.nativeElement.files[0]?.name,
     };
-    this.employeeService.postEmployee(employee).subscribe((res) => {
+    this.employeeService.postEmployee(employee).subscribe((res: Employee) => {
       this.employees.unshift(res);
       this.clearForm();
     });
@@ -79,7 +79,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   removeEmployee(event: any) {
     this.employees.forEach((val, index) => {
       if (val.id === parseInt(event)) {
-        this.employeeService.deleteEmployee(event).subscribe((res) => {
+        this.employeeService.deleteEmployee(event).subscribe((res: any) => {
           this.employees.splice(index, 1);
         });
       }
